@@ -1,7 +1,7 @@
-import { useRef } from "react";
+import { useRef } from 'react';
 
 export const Component = () => {
-  const ref = useRef<HTMLDivElement>();
+    const ref = useRef(null);
 
-  return <div ref={ref} />;
+    return <div ref={ref} />;
 };
