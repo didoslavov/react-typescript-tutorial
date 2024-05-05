@@ -1,16 +1,16 @@
-import React from "react";
+import React from 'react';
 
-export const Button = (props: unknown) => {
-  return <button className={props.className}></button>;
+export const Button = (props: { className: string }) => {
+    return <button className={props.className}></button>;
 };
 
 const Parent = () => {
-  return (
-    <>
-      {/* @ts-expect-error */}
-      <Button></Button>
+    return (
+        <>
+            {/* @ts-expect-error */}
+            <Button></Button>
 
-      <Button className="my-class"></Button>
-    </>
-  );
+            <Button className="my-class"></Button>
+        </>
+    );
 };
