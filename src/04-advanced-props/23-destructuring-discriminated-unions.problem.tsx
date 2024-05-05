@@ -8,35 +8,36 @@
  */
 
 type ModalProps =
-  | {
-      variant: "no-title";
-    }
-  | {
-      variant: "title";
-      title: string;
-    };
+    | {
+          variant: 'no-title';
+          title?: null;
+      }
+    | {
+          variant: 'title';
+          title: 'Hello';
+      };
 
 export const Modal = ({ variant, title }: ModalProps) => {
-  if (variant === "no-title") {
-    return <div>No title</div>;
-  } else {
-    return <div>Title: {title}</div>;
-  }
+    if (variant === 'no-title') {
+        return <div>No title</div>;
+    } else {
+        return <div>Title: {title}</div>;
+    }
 };
 
 export const Test = () => {
-  return (
-    <div>
-      <Modal variant="title" title="Hello" />
-      <Modal variant="no-title" />
+    return (
+        <div>
+            <Modal variant="title" title="Hello" />
+            <Modal variant="no-title" />
 
-      {/* @ts-expect-error */}
-      <Modal />
-      <Modal
-        variant="no-title"
-        // @ts-expect-error
-        title="Oh dear"
-      />
-    </div>
-  );
+            {/* @ts-expect-error */}
+            <Modal />
+            <Modal
+                variant="no-title"
+                // @ts-expect-error
+                title="Oh dear"
+            />
+        </div>
+    );
 };
