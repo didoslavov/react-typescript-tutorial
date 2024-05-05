@@ -1,31 +1,28 @@
-import { Equal, Expect } from "../helpers/type-utils";
+import { Equal, Expect } from '../helpers/type-utils';
 
 export const nullAsRef = (
-  <div
-    ref={{
-      current: null,
-    }}
-  ></div>
+    <div
+        ref={{
+            current: null,
+        }}></div>
 );
 
 // Legacy refs are supported!
-export const stringAsRef = <div ref={"legacyRef"}></div>;
+export const stringAsRef = <div ref={'legacyRef'}></div>;
 
 export const undefinedAsRef = (
-  <div
-    ref={{
-      // Type 'undefined' is not assignable to
-      // type 'HTMLDivElement | null'.
-      current: undefined,
-    }}
-  ></div>
+    <div
+        ref={{
+            // Type 'undefined' is not assignable to
+            // type 'HTMLDivElement | null'.
+            current: null,
+        }}></div>
 );
 
 // Callback refs are supported via RefCallback<T>
 export const callbackRefs = (
-  <div
-    ref={(htmlDivElement) => {
-      type test = Expect<Equal<typeof htmlDivElement, HTMLDivElement | null>>;
-    }}
-  ></div>
+    <div
+        ref={(htmlDivElement) => {
+            type test = Expect<Equal<typeof htmlDivElement, HTMLDivElement | null>>;
+        }}></div>
 );
