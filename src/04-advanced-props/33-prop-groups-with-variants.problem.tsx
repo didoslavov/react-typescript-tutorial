@@ -1,28 +1,28 @@
-import { ComponentProps } from "react";
+import { ComponentProps } from 'react';
 
 const buttonPropsMap = {
-  reset: {
-    className: "bg-blue-500 text-white",
-    type: "reset",
-    // @ts-expect-error
-    illegalProperty: "whatever",
-  },
-  submit: {
-    className: "bg-gray-200 text-black",
-    type: "submit",
-    // @ts-expect-error
-    illegalProperty: "whatever",
-  },
-  next: {
-    className: "bg-green-500 text-white",
-    type: "button",
-    // @ts-expect-error
-    illegalProperty: "whatever",
-  },
-};
+    reset: {
+        className: 'bg-blue-500 text-white',
+        type: 'reset',
+        // @ts-expect-error
+        illegalProperty: 'whatever',
+    },
+    submit: {
+        className: 'bg-gray-200 text-black',
+        type: 'submit',
+        // @ts-expect-error
+        illegalProperty: 'whatever',
+    },
+    next: {
+        className: 'bg-green-500 text-white',
+        type: 'button',
+        // @ts-expect-error
+        illegalProperty: 'whatever',
+    },
+} satisfies Record<string, ComponentProps<'button'>>;
 
 type ButtonProps = {
-  variant: keyof typeof buttonPropsMap;
+    variant: keyof typeof buttonPropsMap;
 };
 
 /**
@@ -45,20 +45,20 @@ type ButtonProps = {
  */
 
 export const Button = (props: ButtonProps) => {
-  return <button {...buttonPropsMap[props.variant]}>Click me</button>;
+    return <button {...buttonPropsMap[props.variant]}>Click me</button>;
 };
 
 const Parent = () => {
-  return (
-    <>
-      <Button variant="next"></Button>
-      <Button variant="reset"></Button>
-      <Button variant="submit"></Button>
+    return (
+        <>
+            <Button variant="next"></Button>
+            <Button variant="reset"></Button>
+            <Button variant="submit"></Button>
 
-      {/* @ts-expect-error */}
-      <Button variant="something"></Button>
-      {/* @ts-expect-error */}
-      <Button></Button>
-    </>
-  );
+            {/* @ts-expect-error */}
+            <Button variant="something"></Button>
+            {/* @ts-expect-error */}
+            <Button></Button>
+        </>
+    );
 };
