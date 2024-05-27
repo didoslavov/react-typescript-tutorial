@@ -1,3 +1,9 @@
+<h1 align="center">React & Typescript<h1>
+
+<p align="center">
+<img src="https://github.com/didoslavov/react-typescript-tutorial/blob/main/reactts.png" />
+</p>
+
 <a href="https://totaltypescript.com/tutorials/react-with-typescript"><img src="https://res.cloudinary.com/total-typescript/image/upload/v1683647787/react-with-typescript_p2dgf5.png" alt="React with TypeScript, tutorial by Matt Pocock" /></a>
 
 ## Quickstart
